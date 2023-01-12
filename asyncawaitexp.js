@@ -1,9 +1,11 @@
+//fetch data from the url
 function fetchData(username) {
   const base_url = `https://api.github.com/users/${username}`;
   const resp = fetch(base_url);
   return resp;
 }
 
+//asynch function to handle data
 const loadGithubUserInfo = async (username) => {
   const response = await fetchData(username);
   const result = await response.json();
