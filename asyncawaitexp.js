@@ -7,6 +7,7 @@ function fetchData(username) {
 
 //asynch function to handle data
 const loadGithubUserInfo = async (username) => {
+  console.log(typeof username);
   const response = await fetchData(username);
   const result = await response.json();
   document.getElementById("showUser").innerHTML = `
@@ -20,4 +21,10 @@ const loadGithubUserInfo = async (username) => {
           </div>`;
 };
 
-loadGithubUserInfo("AmitMali");
+document
+  .getElementById("showGuthubUserBtn")
+  .addEventListener("click", async (event) => {
+    username = document.getElementById("showGuthubUserName").value;
+
+    await loadGithubUserInfo(username);
+  });
