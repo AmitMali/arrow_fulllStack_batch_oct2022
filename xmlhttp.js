@@ -13,6 +13,7 @@ function loaddata() {
     <th>Phone</th>
     <th>Webiste</th>
   </thead>`;
+    const table = document.getElementById("responceElement");
     resp.forEach((user) => {
       output += `<tr>
         <td>${user.id}</td>
